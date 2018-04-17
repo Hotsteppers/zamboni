@@ -1,6 +1,23 @@
 # zamboni
 Public NHL API Scraper and Task Scheduler
 
+## Contributing
+
+### Clone and Set up a Virtualenv
+
+We recommend setting up a virutalenv when working on this locally. From within the project run
+
+```
+python3 -m venv env/
+source env/bin/activate
+```
+
+To read more about Python3 Virtual Environments look [here](https://docs.python.org/3/library/venv.html)
+
+### Testing
+Run `make test` 
+
+We are enforcing syntax with Flake8. You can read more about Flake8 [here](http://flake8.pycqa.org/en/latest/)
 
 ## NHL Public API
 - **Schedule**: `https://statsapi.web.nhl.com/api/v1/schedule?startDate={startDate}&endDate={endDate}`

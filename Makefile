@@ -1,4 +1,4 @@
 ENV=env
 
 test:
-	- flake8 helpers ||:
+	- pytest --flake8 ||:

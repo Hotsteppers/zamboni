@@ -1,7 +1,7 @@
-**[CircleCI](https://circleci.com/gh/Hotsteppers)**: [![CircleCI](https://circleci.com/gh/Hotsteppers/zamboni/tree/master.svg?style=svg)](https://circleci.com/gh/Hotsteppers/zamboni/tree/master)
-
-# zamboni
+# Zamboni
 Public NHL API Scraper and Task Scheduler
+
+**[CircleCI](https://circleci.com/gh/Hotsteppers)**: [![CircleCI](https://circleci.com/gh/Hotsteppers/zamboni/tree/master.svg?style=svg)](https://circleci.com/gh/Hotsteppers/zamboni/tree/master)
 
 ## Contributing
 

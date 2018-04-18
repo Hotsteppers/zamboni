@@ -12,6 +12,12 @@ python3 -m venv env/
 source env/bin/activate
 ```
 
+Once the virtual environment is set up install dependencies using
+
+```
+pip install -r requirements.txt
+```
+
 To read more about Python3 Virtual Environments look [here](https://docs.python.org/3/library/venv.html)
 
 ### Testing

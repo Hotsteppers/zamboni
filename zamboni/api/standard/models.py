@@ -2,7 +2,6 @@
 
 import requests
 
-
 class PublicBase():
     """
     Abstract Base Class for all public API operators.
@@ -41,3 +40,4 @@ class PublicBase():
             # TODO: Better Exception Handling if API is Down
 
         return -1
+    

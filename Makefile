@@ -1,5 +1,5 @@
-ENV=env
-FLASK_APP=zamboni/api/server.py
+export ENV=env
+export FLASK_APP=zamboni/api/server.py
 
 run:
 	- flask run

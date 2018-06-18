@@ -17,3 +17,12 @@ def schedule(startDate, endDate):
     r = requests.get('https://statsapi.web.nhl.com/api/v1/schedule', params=params)
     json_obj = r.json()
     return json.dumps(json_obj), 200, {'ContentType': 'application/json'}
+
+
+@app.route('/player/<playerId>')
+def player(playerId):
+    params = {'playerId': playerId}
+    reqString = 'http://statsapi.web.nhl.com/api/v1/people/{playerId}'.format(**params)
+    r = requests.get(reqString)
+    json_obj = r.json()
+    return json.dumps(json_obj), 200, {'ContentType': 'application/json'}

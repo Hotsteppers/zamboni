@@ -35,3 +35,12 @@ def get_team(teamId):
     r = requests.get(reqString)
     json_obj = r.json()
     return json.dumps(json_obj), 200, {'ContentType': 'application/json'}
+
+
+@app.route('/pbp/<year>/<gameId>')
+def get_pbp(year, gameId):
+    params = {'year': year, 'gameId': gameId}
+    reqString = 'https://statsapi.web.nhl.com/api/v1/game/{year}0{gameId}/feed/live?site=en_nhl'.format(**params)
+    r = requests.get(reqString)
+    json_obj = r.json()
+    return json.dumps(json_obj), 200, {'ContentType': 'application/json'}

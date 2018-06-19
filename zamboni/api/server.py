@@ -49,8 +49,8 @@ def get_pbp(year, gameId):
 @app.route('/shifts/<year>/<gameId>')
 def get_shifts(year, gameId):
     params = {'year': year, 'gameId': gameId}
-    arg_part = 'gameId ={year}0{gameId}'.format(**params)
-    reqString = 'http: // www.nhl.com/stats/rest/shiftcharts?cayenneExp = {0}'.format(arg_part)
+    arg_part = 'gameId={year}0{gameId}'.format(**params)
+    reqString = 'http://www.nhl.com/stats/rest/shiftcharts?cayenneExp={0}'.format(arg_part)
     r = requests.get(reqString)
     json_obj = r.json()
     return json.dumps(json_obj), 200, {'ContentType': 'application/json'}

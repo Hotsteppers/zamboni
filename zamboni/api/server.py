@@ -54,3 +54,12 @@ def get_shifts(year, gameId):
     r = requests.get(reqString)
     json_obj = r.json()
     return json.dumps(json_obj), 200, {'ContentType': 'application/json'}
+
+
+@app.route('/highlights/<year>/<gameId>')
+def get_highlights(year, gameId):
+    params = {'year': year, 'gameId': gameId}
+    reqString = 'https://statsapi.web.nhl.com/api/v1/game/{year}0{gameId}/content?site=en_nhl'.format(**params)
+    r = requests.get(reqString)
+    json_obj = r.json()
+    return json.dumps(json_obj), 200, {'ContentType': 'application/json'}

@@ -1,4 +1,6 @@
+
 # Zamboni
+
 Public NHL API Scraper and Task Scheduler
 
 **[CircleCI](https://circleci.com/gh/Hotsteppers)**: [![CircleCI](https://circleci.com/gh/Hotsteppers/zamboni/tree/master.svg?style=svg)](https://circleci.com/gh/Hotsteppers/zamboni/tree/master)
@@ -9,25 +11,31 @@ Public NHL API Scraper and Task Scheduler
 
 We recommend setting up a virutalenv when working on this locally. From within the project run
 
-```
+```bash
 python3 -m venv env/
 source env/bin/activate
 ```
 
 Once the virtual environment is set up install dependencies using
 
-```
+```bash
 pip install -r requirements.txt
 ```
 
 To read more about Python3 Virtual Environments look [here](https://docs.python.org/3/library/venv.html)
 
+### Development
+
+Run `make dev`. The development server will spin up and be accessible at localhost:5000
+
 ### Testing
-Run `make test` 
+
+Run `make test`
 
 We are enforcing syntax with Flake8. You can read more about Flake8 [here](http://flake8.pycqa.org/en/latest/)
 
 ## NHL Public API
+
 - **Schedule**: `https://statsapi.web.nhl.com/api/v1/schedule?startDate={startDate}&endDate={endDate}`
   - Gets all scheduled games between `{startDate}` and `{endDate}` (inclusive)
   - `{startDate}` & `{endDate}` in the form `YYYY-MM-DD`
@@ -50,3 +58,7 @@ We are enforcing syntax with Flake8. You can read more about Flake8 [here](http:
   - Gets the chosen games highlight plays. 
   - `{year}` is the year the game fell within 
   - `{gameId}` is a 5-digit game identifier used to connect these records with schedule, play-by-play, and shift records.
+
+### Contributing
+
+Feel free to contribute. Fork and/or clone the repo and submit a pull request on a new branch. 

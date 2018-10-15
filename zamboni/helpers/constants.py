@@ -2,7 +2,7 @@ from itertools import chain
 
 # Public NHL API Endpoints
 PBP_URL = 'https://statsapi.web.nhl.com/api/v1/game/{year}0{gameId}/feed/live?site=en_nhl'
-SHIFTS_URL = 'http://www.nhl.com/stats/rest/shiftcharts?cayenneExp=gameId={gameId}'
+SHIFTS_URL = 'http://www.nhl.com/stats/rest/shiftcharts?cayenneExp=gameId={year}0{gameId}'
 PLAYERS_URL = 'http://statsapi.web.nhl.com/api/v1/people/{playerId}'
 TEAMS_URL = 'https://statsapi.web.nhl.com/api/v1/teams/{teamId}'
 HIGHLIGHTS_URL = 'https://statsapi.web.nhl.com/api/v1/game/{year}0{gameId}/content?site=en_nhl'

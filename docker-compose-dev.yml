@@ -1,0 +1,15 @@
+version: '3.6'
+
+services: 
+  zamboni:
+    build:
+      context: ./ 
+      dockerfile: dockerfile
+    volumes:
+      - './zamboni:/zamboni'
+    ports:
+      - 5000:5000
+    environment:
+      - FLASK_APP=zamboni/api/server.py
+      - FLASK_ENV=development
+      - APP_SETTINGS=config.DevelopmentConfig  # new

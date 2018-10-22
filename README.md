@@ -26,6 +26,7 @@ To read more about Python3 Virtual Environments look [here](https://docs.python.
 
 ### Development
 
+Run `make build-dev` to build the development environment
 Run `make dev`. The development server will spin up and be accessible at localhost:5000
 
 ### Testing

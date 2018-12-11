@@ -1,9 +1,33 @@
 import json
+import os
 import requests
 
 from flask import Flask, Response
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+
+# set config
+app_settings = os.getenv('APP_SETTINGS')
+app.config.from_object(app_settings)
+
+db = SQLAlchemy(app)
+
+
+class Game(db.Model):  # new
+    __tablename__ = 'schedule'
+    game_id = db.Column(db.Integer, primary_key=True)
+    home_team_id = db.Column(db.Integer, nullable=False)
+    away_team_id = db.Column(db.Integer, nullable=False)
+    home_team_score = db.Column(db.Integer(), default=0, nullable=False)
+    away_team_score = db.Column(db.Integer(), default=0, nullable=False)
+
+    def __init__(self, game_id, home_team_id, away_team_id, home_team_score, away_team_score):
+        self.game_id = game_id
+        self.home_team_id = home_team_id
+        self.away_team_id = away_team_id
+        self.home_team_score = home_team_score
+        self.away_team_score = away_team_score
 
 
 @app.route('/healthcheck')

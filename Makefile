@@ -1,11 +1,13 @@
 export ENV=env
-export FLASK_APP=zamboni/api/server.py
 
 run:
 	- flask run
 
+build-dev:
+	- docker-compose -f docker-compose-dev.yml up -d --build
+
 dev:
-	- export FLASK_DEBUG=1 && flask run
+	- docker-compose -f docker-compose-dev.yml up
 
 test:
 	- pytest --flake8 ||:

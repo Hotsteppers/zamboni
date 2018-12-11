@@ -1,4 +1,7 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-export FLASK_APP=zamboni/api/server.py
-flask run
+echo "Waiting for postgres..."
+
+echo "PostgreSQL started"
+
+python manage.py run -h 0.0.0.0

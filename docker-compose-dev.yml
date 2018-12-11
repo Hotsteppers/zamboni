@@ -1,6 +1,17 @@
 version: '3.6'
 
 services: 
+  postgres:
+    build: 
+      context: ./zamboni/db
+      dockerfile: dockerfile-db
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=zamboni
+      - POSTGRES_PASSWORD=zamboni
+      - POSTGRES_DB=zamboni
+
   zamboni:
     build:
       context: ./ 
@@ -12,4 +23,9 @@ services:
     environment:
       - FLASK_APP=zamboni/api/server.py
       - FLASK_ENV=development
-      - APP_SETTINGS=config.DevelopmentConfig  # new
+      - APP_SETTINGS=config.DevelopmentConfig 
+      - DATABASE_URL=postgres://postgres:postgres@zamboni:5432/api_dev
+      - DATABASE_TEST_URL=postgres://postgres:postgres@zamboni:5432/api_test
+    depends_on:
+      - postgres
+  

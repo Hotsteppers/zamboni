@@ -27,13 +27,22 @@ To read more about Python3 Virtual Environments look [here](https://docs.python.
 ### Development
 
 Run `make build-dev` to build the development environment
-Run `make dev`. The development server will spin up and be accessible at localhost:5000
+Run `make dev`. The development server will spin up and be accessible at localhost:5000. This will also spin up a postgres instance which can be managed via docker.
 
 ### Testing
 
 Run `make test`
 
 We are enforcing syntax with Flake8. You can read more about Flake8 [here](http://flake8.pycqa.org/en/latest/)
+
+### Managing the Postgres DB
+
+You can manually manage the Postgres instance by running the command: 
+```bash
+docker exec -it zamboni_postgres_1 bash
+```
+
+Once you are in the docker container you can run `psql -U zamboni` and explore the db instances.
 
 ## NHL Public API
 
